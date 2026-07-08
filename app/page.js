@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from "react";
 
+const APP_REPO_URL = "https://github.com/hicksonhaziel/tifo";
+const APP_CLONE_URL = "https://github.com/hicksonhaziel/tifo.git";
+const RELEASES_URL = "https://github.com/hicksonhaziel/tifo/releases/latest";
+const PEARS_DOCS_URL = "https://docs.pears.com/";
+const QVAC_DOCS_URL = "https://docs.qvac.tether.io/";
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -765,7 +771,13 @@ export default function Home() {
           </p>
 
           <div className="built-grid">
-            <div className="built-card">
+            <a
+              href={PEARS_DOCS_URL}
+              className="built-card"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Pear documentation"
+            >
               <div className="tag">P2P Networking</div>
               <div className="built-logo pear">
                 <img src="/assets/pears-logo.svg" alt="Pears" />
@@ -780,9 +792,15 @@ export default function Home() {
                 <li>Hypercore</li>
                 <li>Autobase</li>
               </ul>
-            </div>
+            </a>
 
-            <div className="built-card">
+            <a
+              href={QVAC_DOCS_URL}
+              className="built-card"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open QVAC documentation"
+            >
               <div className="tag">On-Device AI</div>
               <div className="built-logo qvac">
                 <img src="/assets/qvac-logo.svg" alt="QVAC" />
@@ -798,7 +816,7 @@ export default function Home() {
                 <li>Multilingual</li>
                 <li>Chant-aware</li>
               </ul>
-            </div>
+            </a>
 
             <div className="built-card">
               <div className="tag">Design Principles</div>
@@ -849,7 +867,13 @@ export default function Home() {
           </div>
 
           <div className="dl-platforms">
-            <a href="#" className="dl-card" aria-label="Download TIFO for Linux">
+            <a
+              href={RELEASES_URL}
+              className="dl-card"
+              aria-label="Download TIFO for Linux"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="os-ico">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <ellipse cx="12" cy="15" rx="5" ry="6" />
@@ -869,7 +893,13 @@ export default function Home() {
               </span>
             </a>
 
-            <a href="#" className="dl-card" aria-label="Download TIFO for macOS">
+            <a
+              href={RELEASES_URL}
+              className="dl-card"
+              aria-label="Download TIFO for macOS"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="os-ico">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M15 3c-1 1-2 3-1 5 2 0 3-1 3-3M8 21c-2 0-4-3-4-7 0-4 2-6 4-6 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 6 0 4-2 7-4 7-1 0-2-1-3-1s-2 1-3 1z" />
@@ -885,7 +915,13 @@ export default function Home() {
               </span>
             </a>
 
-            <a href="#" className="dl-card" aria-label="Download TIFO for Windows">
+            <a
+              href={RELEASES_URL}
+              className="dl-card"
+              aria-label="Download TIFO for Windows"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="os-ico">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <rect x="3" y="4" width="8" height="8" />
@@ -915,7 +951,12 @@ export default function Home() {
               <div className="dev-badges">
                 <span className="badge">v 1.0.0</span>
                 <span className="badge mit">MIT License</span>
-                <a href="#" className="badge gh">
+                <a
+                  href={APP_REPO_URL}
+                  className="badge gh"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
@@ -942,8 +983,7 @@ export default function Home() {
                   <span className="comment"># clone the repo</span>
                 </div>
                 <div>
-                  <span className="prompt">$</span> git clone
-                  https://github.com/tifo-app/tifo.git
+                  <span className="prompt">$</span> git clone {APP_CLONE_URL}
                 </div>
                 <div>
                   <span className="prompt">$</span> cd tifo
@@ -982,8 +1022,16 @@ export default function Home() {
               </span>
             </div>
             <div className="foot-links">
-              <a href="#">GitHub ↗</a>
-              <a href="#">MIT License</a>
+              <a href={APP_REPO_URL} target="_blank" rel="noreferrer">
+                GitHub ↗
+              </a>
+              <a
+                href={`${APP_REPO_URL}/blob/main/package.json`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                MIT License
+              </a>
               <a href="#top">Back to top ↑</a>
             </div>
           </div>
